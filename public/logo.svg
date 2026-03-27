@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
+  <!-- Icône montre -->
+  <circle cx="25" cy="25" r="22" fill="#1A2B4A" stroke="#C4966A" stroke-width="1.5"/>
+  <circle cx="25" cy="25" r="17" fill="#F9F5EE" fill-opacity="0.05"/>
+  <!-- Marqueurs heures -->
+  <rect x="24" y="5" width="2" height="4" rx="1" fill="#C4966A"/>
+  <rect x="24" y="41" width="2" height="4" rx="1" fill="#C4966A"/>
+  <rect x="5" y="24" width="4" height="2" rx="1" fill="#C4966A"/>
+  <rect x="41" y="24" width="4" height="2" rx="1" fill="#C4966A"/>
+  <!-- Aiguilles -->
+  <line x1="25" y1="25" x2="25" y2="10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <line x1="25" y1="25" x2="14" y2="14" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="25" y1="25" x2="35" y2="29" stroke="#C4966A" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="25" cy="25" r="2.5" fill="#C4966A"/>
+  <!-- Texte -->
+  <text x="58" y="20" font-family="Georgia, serif" font-size="12" font-weight="600" fill="#1A2B4A" letter-spacing="0.5">Avenue de l'Horloge</text>
+  <text x="58" y="35" font-family="Arial, sans-serif" font-size="7.5" font-weight="400" fill="#C4966A" letter-spacing="1.5">EXPERT EN HORLOGERIE</text>
+</svg>

@@ -1,112 +1,126 @@
-# Brief de génération de site (niche-starter)
+## Description
+## Avenue de l'Horloge - Expert en Horlogerie
 
-Ce fichier est le brief unique à remplir avant d'envoyer le projet à l'IA.
-L'agent doit lire d'abord `CLAUDE.md`, puis ce fichier.
+**Avenue de l'Horloge** est un site spécialisé dans l'univers des montres, couvrant toutes les gammes et marques - du garde-temps accessible aux pièces de haute horlogerie. Contrairement aux sites généralistes, nous nous positionnons comme l'expert technique et pratique qui répond aux questions concrètes des passionnés d'horlogerie.
 
----
+Notre mission est de capturer la longue traîne SEO en traitant des sujets ultra-spécifiques : que faire si une montre tombe dans l'eau, comment réparer le verre d'un modèle précis, quelles montres porter selon les occasions vestimentaires, comment entretenir et stocker ses garde-temps, ou encore comment gérer les bracelets. Le site vise un public d'amateurs éclairés et de collectionneurs recherchant des conseils techniques pointus et des guides pratiques détaillés, avec pour objectif de devenir LA référence en matière de savoir-faire horloger sur le web francophone.
 
-## 1) Infos projet
+## Prompt IA
+Tu es un assistant de développement full-stack ET designer UI/UX chargé de configurer et d'adapter un template Next.js pour un nouveau site de contenu.
 
-- `site_name`:
-- `site_domain`:
-- `site_url`:
-- `default_locale`:
-- `site_id` (UUID Supabase):
-- `tier` (`tier1` / `tier2`):
+⚠️ **IMPORTANT - Design Unique Obligatoire** :
+- Chaque site doit avoir un design **COMPLÈTEMENT DIFFÉRENT**
+- **JAMAIS** copier-coller des couleurs d'exemples
+- **TOUJOURS** créer une palette basée sur l'univers émotionnel de la thématique
+- Suivre le workflow : ANALYSE → DESIGN SYSTEM → ARCHITECTURE → DÉVELOPPEMENT
 
-## 2) Positionnement éditorial
+## 0. Contexte du projet
+- Nom du projet : Avenue de l'Horloge
+- Domaine : avenue-de-lhorloge.com
+- Type de site : Money site expert (SEO longue traîne)
+- Thématiques : Horlogerie, montres, expertise technique
+- Objectif business : Positionnement expert, affiliation, revenus publicitaires
+- Audience cible : Passionnés d'horlogerie, collectionneurs, amateurs éclairés
 
-- Thématique:
-- Audience cible:
-- Objectif business:
-- Ton éditorial:
-- Angles à privilégier:
-- Angles interdits:
+## 1. Identité visuelle & Design System (PHASE CRITIQUE)
 
-## 3) Arborescence souhaitée
+⚠️ **À FAIRE EN PREMIER, AVANT TOUT CODE**
 
-- Pages de navigation (hors blog):
-- Sections homepage attendues:
-- CTA principal:
-- CTA secondaire:
+### Univers visuel à créer
+- **5 adjectifs** décrivant l'ambiance du site : Précis, Élégant, Technique, Intemporel, Raffiné
+- **Références visuelles mentales** : Mécanismes d'horlogerie suisse, ateliers traditionnels, cadrans vintage, aiguilles dorées, cuir patiné, acier brossé
+- **Émotions à évoquer** chez le visiteur : Confiance en l'expertise, fascination pour la mécanique, sentiment de précision et de qualité
 
-## 4) Contraintes SEO
+### Palette de couleurs
+⚠️ **NE PAS proposer de codes HEX directement**
 
-- Requêtes principales:
-- Entités importantes:
-- Concurrents de référence:
-- Règles de maillage interne spécifiques:
-- URLs legacy à rediriger (si applicable):
+À partir de l'univers horloger ci-dessus, l'agent développeur devra :
+1. S'inspirer des tons classiques de l'horlogerie : or rose, acier brossé, bleu nuit profond, cuir cognac
+2. Créer une palette UNIQUE avec :
+   - Couleur principale (primary) : Inspirée de l'or rose des montres de prestige
+   - Couleur secondaire (secondary) : Basée sur l'acier brossé des boîtiers
+   - Couleur d'accent (accent) : Évoquant le bleu nuit des cadrans premium
+   - Couleur de fond (background) : Rappelant la crème des cadrans vintage
+   - Variante hover : Version saturée de l'accent
+3. Assurer un contraste suffisant pour l'accessibilité technique
 
-## 5) Direction artistique
+### Typographie
+- Google Font principale : **Crimson Pro** (élégance classique, lisibilité technique)
+- Font secondaire : **Inter** (pour les contenus techniques et specs)
 
-- Univers visuel:
-- Inspirations:
-- Couleurs souhaitées / évitées:
-- Style typographique:
-- Niveau d'animation:
-- Niveau de sobriété (1-10):
+## 2. SEO & métadonnées
+- **Titre SEO principal** pour la home : "Avenue de l'Horloge | Expert Montres & Horlogerie"
+- **Méta-description principale** : "Guides experts en horlogerie : entretien, réparation, choix de montres. Conseils techniques pour tous garde-temps, du quotidien au prestige."
+- **Open Graph title** : "Avenue de l'Horloge - Votre Expert en Horlogerie"
 
-## 6) Assets (R2 / médias)
+## 3. Rôle du template
+- Le projet part d'un template Next.js existant
+- Fichiers à mettre à jour :
+  - `config/site.ts` (name, description, domain, navigation horlogerie)
+  - `app/globals.css` (palette horlogère UNIQUE selon méthodologie section 1)
+  - contenus de démo remplacés par expertise montres
+  - configuration blog Supabase pour contenu technique
 
-- Bucket/source:
-- Liste images hero:
-- Liste images sections:
-- Liste images guides/blog:
-- Contraintes de ratio/poids:
+## 4. Images pré-générées - À TÉLÉCHARGER ET INTÉGRER
 
-## 7) Contraintes techniques
+**Hero principal** : https://pub-3c1bead77fc84e5d93e229fe1a5fb51f.r2.dev/avenue-de-lhorloge-com-home-hero-luxury-watches.jpeg
 
-- Le code doit respecter strictement les règles de `CLAUDE.md`.
-- Ne pas modifier les fichiers Core interdits.
-- Pas de `select("*")` ajouté.
-- Pas de faux articles.
-- Aucune page 404.
-- Toute page additionnelle liée (outil, carte, simulateur, etc.) doit être implémentée et réellement remplie.
-- Si une page n'existe pas, aucun lien ne doit pointer vers elle.
-- Tout lien vers le même domaine doit être traité comme lien interne dofollow.
-- `npm run build` doit passer.
+**Section expertise** : https://pub-3c1bead77fc84e5d93e229fe1a5fb51f.r2.dev/avenue-de-lhorloge-com-home-expertise-watchmaker.jpeg
 
-## 8) Données légales à injecter
+**Section entretien** : https://pub-3c1bead77fc84e5d93e229fe1a5fb51f.r2.dev/avenue-de-lhorloge-com-home-maintenance-tools.jpeg
 
-- Mentions légales (éditeur):
-- Contact public:
-- DPO/contact RGPD:
-- Hébergeur:
+**Section guides** : https://pub-3c1bead77fc84e5d93e229fe1a5fb51f.r2.dev/avenue-de-lhorloge-com-home-guides-collection.jpeg
 
----
+**Section réparation** : https://pub-3c1bead77fc84e5d93e229fe1a5fb51f.r2.dev/avenue-de-lhorloge-com-home-repair-precision.jpeg
 
-## 9) Prompt prêt à envoyer à l'IA
+**Page blog - Header** : https://pub-3c1bead77fc84e5d93e229fe1a5fb51f.r2.dev/avenue-de-lhorloge-com-blog-header-vintage-workshop.jpeg
 
-Copie/colle ce prompt dans ton agent (Claude/Codex/Gemini) en étant dans ce repo:
+## 5. Contenu & structure à mettre en place
+- Types de contenus à garder : blog technique, guides pratiques, comparatifs montres
+- **Sections obligatoires sur la page d'accueil** (/) :
+  - Hero : "L'Expertise Horlogère à Portée de Main" + CTA "Découvrir nos Guides"
+  - Section Expertise : Présentation savoir-faire technique (image watchmaker)
+  - Section Guides : Mise en avant guides pratiques (image collection)
+  - Section Entretien : Focus maintenance/réparation (image tools)
+  - Section Derniers Articles : Articles récents du blog
+  - Section Précision : Engagement qualité/expertise (image precision)
+- Navigation : Accueil, Guides, Entretien, Marques, Réparation, Blog, Contact
+- Clusters thématiques : Entretien, Réparation, Choix & Achat, Style & Port, Stockage
 
-```text
-Tu es un ingénieur Next.js senior + designer UI/UX.
-Tu travailles dans un projet basé sur niche-starter.
+## 6. Consignes éditoriales
+- Ton à respecter : Expert mais accessible, technique sans jargon excessif, pédagogue
+- Types d'articles attendus :
+  * Guides techniques ("Comment réparer un verre de montre")
+  * Conseils style ("Quelle montre avec une chemise rouge")
+  * Maintenance ("Stocker ses montres sans les abîmer")
+  * Troubleshooting ("Montre tombée dans l'eau : que faire")
+  * Reviews marques et modèles spécifiques
+- Contraintes : Éviter le commercial excessif, rester factuel et technique
 
-Ordre obligatoire:
-1) Lire CLAUDE.md
-2) Lire instructions.md
-3) Implémenter le site complet en respectant strictement ces deux fichiers.
+## 7. Checklist technique
+- Configuration `.env` (clés Supabase, SITE_DOMAIN=avenue-de-lhorloge.com)
+- Mise à jour `config/site.ts` avec navigation horlogerie
+- **Création palette horlogère UNIQUE** selon méthodologie section 1
+- Logos horlogers (`/public/logo.svg`, `/app/icon.svg`)
+- **Intégration des images téléchargées** depuis les URLs R2 fournies
+- Intégration blog Supabase avec filtrage domaine
+- Test `npm run lint` et `npm run build`
+- Configuration déploiement
 
-Contraintes non négociables:
-- Zéro 404
-- Zéro placeholder
-- Aucune modification des fichiers Core interdits
-- Blog 100% Supabase (aucun faux article)
-- ISR egress-safe (revalidate conforme)
-- Toute page additionnelle liée doit exister et être remplie (sinon supprimer le lien)
-- Tout lien du même domaine doit être interne et dofollow
-- npm run build sans erreur
+## 8. Anti-patterns à éviter
+❌ Design générique "site de montres"
+❌ Palette copiée d'autres sites horlogers
+❌ Ton trop commercial ou amateur
+❌ Oublier les images pré-générées
+❌ Navigation trop complexe pour l'expertise technique
 
-Action attendue:
-- Créer/modifier les fichiers autorisés
-- Produire un design distinctif adapté à la thématique
-- Remplir toutes les pages obligatoires avec contenu cohérent
-- Utiliser les assets fournis dans instructions.md
+## URLs à rediriger
+avenue-de-lhorloge.com/collections/horloge-coucou
 
-À la fin:
-- Exécuter npm run build
-- Fournir la liste des fichiers modifiés
-- Expliquer brièvement les choix design et SEO effectués
-```
+## Instructions redirection
+Chaque URL doit rediriger vers la version blog.
+Insérer /blog/ entre le domaine et le slug.
+Les segments après le domaine sont concaténés avec des tirets pour former le slug.
+Exemples:
+www.offreslg.fr/tv-oled-c2g2 -> www.offreslg.fr/blog/tv-oled-c2g2
+www.offreslg.fr/tv/check-status -> www.offreslg.fr/blog/tv-check-status

@@ -1,0 +1,30 @@
+export const siteConfig = {
+  name: "Avenue de l'Horloge",
+  description: "Guides experts en horlogerie : entretien, réparation, choix de montres. Conseils techniques pour tous garde-temps, du quotidien au prestige.",
+  domain: "avenue-de-lhorloge.com",
+  url: "https://avenue-de-lhorloge.com",
+  email: "contact@avenue-de-lhorloge.com",
+  mainNav: [
+    { title: "Accueil", href: "/" },
+    { title: "Guides", href: "/blog?category=guides" },
+    { title: "Entretien", href: "/blog?category=entretien" },
+    { title: "Réparation", href: "/blog?category=reparation" },
+    { title: "Marques", href: "/blog?category=marques" },
+    { title: "Blog", href: "/blog" },
+    { title: "Contact", href: "/contact" },
+  ],
+  footerNav: [
+    { title: "À propos", href: "/a-propos" },
+    { title: "Mentions légales", href: "/mentions-legales" },
+    { title: "Politique de confidentialité", href: "/politique-confidentialite" },
+    { title: "Contact", href: "/contact" },
+  ],
+  categories: [
+    { slug: "entretien", label: "Entretien" },
+    { slug: "reparation", label: "Réparation" },
+    { slug: "guides", label: "Guides pratiques" },
+    { slug: "marques", label: "Marques & Modèles" },
+    { slug: "style-port", label: "Style & Port" },
+    { slug: "stockage", label: "Stockage" },
+  ],
+};
