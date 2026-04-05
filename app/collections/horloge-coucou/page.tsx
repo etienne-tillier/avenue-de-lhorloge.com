@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function HorloCoucouRedirect() {
-  redirect("/blog/horloge-coucou");
+  redirect("/blog/collections-horloge-coucou");
 }
