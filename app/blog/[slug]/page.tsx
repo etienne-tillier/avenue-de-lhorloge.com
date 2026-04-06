@@ -9,6 +9,35 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
+const buildAlternatesByLocale = (post: { slug: string; default_locale?: string | null; translations?: unknown }) => {
+  const siteOriginRaw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  const siteOrigin = siteOriginRaw
+    ? siteOriginRaw.replace(/\/+$/, "")
+    : `https://${(process.env.SITE_DOMAIN || "").replace(/^https?:\/\//, "").replace(/\/+$/, "")}`;
+
+  if (!siteOrigin || siteOrigin === "https://") {
+    return {};
+  }
+
+  const languages: Record<string, string> = {};
+  const defaultLocale = post.default_locale || "fr-FR";
+  languages[defaultLocale] = `${siteOrigin}/blog/${post.slug}`;
+
+  if (post.translations && typeof post.translations === "object") {
+    for (const [locale, value] of Object.entries(post.translations as Record<string, unknown>)) {
+      if (!value || typeof value !== "object") continue;
+      const translation = value as Record<string, unknown>;
+      const translatedSlug = typeof translation.slug === "string" ? translation.slug : "";
+      const status = typeof translation.status === "string" ? translation.status : "published";
+
+      if (!translatedSlug || status !== "published") continue;
+      languages[locale] = `${siteOrigin}/blog/${translatedSlug}`;
+    }
+  }
+
+  return languages;
+};
+
 export const revalidate = 21600;
 
 export async function generateMetadata({
@@ -21,6 +50,7 @@ export async function generateMetadata({
   if (!post) return { title: "Article introuvable" };
 
   return {
+    alternates: { languages: buildAlternatesByLocale(post) },
     title: post.seo_title || post.h1,
     description: post.meta_description || post.excerpt || "",
     openGraph: {
